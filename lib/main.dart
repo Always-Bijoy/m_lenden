@@ -23,7 +23,8 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.teal, fontFamily: 'Nunito'),
-      home: AppIntro(),
+      home: HomePage()
+      // AppIntro(),
       // MyHomePage(title: 'Fancy OnBoarding HomePage'),
     );
   }
