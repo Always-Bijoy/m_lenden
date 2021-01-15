@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:m_lenden/screen/app_flow/FaQ/FaQ.dart';
 
 import 'SendMoney/SendMoney.dart';
 
@@ -286,7 +287,7 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             SizedBox(
-                              height: 18,
+                              height: 15,
                             ),
                             Text("Send Money"),
                           ],
@@ -308,32 +309,42 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             SizedBox(
-                              height: 18,
+                              height: 15,
                             ),
                             Text("Flexiload"),
                           ],
                         ),
-                        Column(
-                          children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Color.fromRGBO(4, 161, 151, 0.25),
+                        GestureDetector(
+                          onTap: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => FaQ(),
                               ),
-                              height: 75,
-                              width: 75,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Image.asset(
-                                  'assets/Info.png',
+                            );
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: Color.fromRGBO(4, 161, 151, 0.25),
+                                ),
+                                height: 75,
+                                width: 75,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Image.asset(
+                                    'assets/Info.png',
+                                  ),
                                 ),
                               ),
-                            ),
-                            SizedBox(
-                              height: 18,
-                            ),
-                            Text("FaQ"),
-                          ],
+                              SizedBox(
+                                height: 15,
+                              ),
+                              Text("FaQ"),
+                            ],
+                          ),
                         ),
                       ],
                     ),
