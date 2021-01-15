@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:m_lenden/DemoScreen.dart';
 import 'package:m_lenden/screen/app_flow/HomePage.dart';
 import 'package:m_lenden/screen/welcome_flow/OTP/OtpVerification/OtpVerificationScreen.dart';
-import 'file:///G:/flutterProject/work/m_lenden/lib/screen/welcome_flow/AppIntro.dart';
-import 'package:m_lenden/screen/welcome_flow/OnBoarding/AppOnBoarding.dart';
-import 'package:m_lenden/screen/welcome_flow/OnBoarding/onBoarding.dart';
-import 'file:///G:/flutterProject/work/m_lenden/lib/screen/welcome_flow/OnBoarding/onBoarding.dart';
 import 'package:m_lenden/screen/welcome_flow/SplashScreen.dart';
 
 void main() {
@@ -23,7 +20,9 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.teal, fontFamily: 'Nunito'),
-      home: HomePage()
+      home:
+      // DummyScreen()
+      SplashScreen()
       // AppIntro(),
       // MyHomePage(title: 'Fancy OnBoarding HomePage'),
     );

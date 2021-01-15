@@ -1,11 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:m_lenden/screen/app_flow/HomePage.dart';
+import 'package:m_lenden/screen/welcome_flow/OTP/OtpVerifiedCode/OtpVerifiedCodeScreen.dart';
 
-class OtpVerificationScreen extends StatelessWidget {
+class OtpVerificationScreen extends StatefulWidget {
+  @override
+  _OtpVerificationScreenState createState() => _OtpVerificationScreenState();
+}
+
+class _OtpVerificationScreenState extends State<OtpVerificationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton:  FloatingActionButton(
+        elevation: 4,
+        child: Container(
+          height: 60,
+          width: 60,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle, // circular shape
+            gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [Color(0xFF05A69B), Color(0xFF03807C)]),
+          ),
+          child: Icon(
+            Icons.arrow_forward_rounded,
+            color: Colors.white,
+          ),
+        ),
+        onPressed: (){
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => OtpVerifiedCode(),
+            ),
+          );
+        },
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -92,25 +125,6 @@ class OtpVerificationScreen extends StatelessWidget {
                     ),
                   ),
                 ],
-              ),
-            ),
-            Align(
-              alignment: Alignment.bottomRight,
-              child: Container(
-                margin: EdgeInsets.only(right: 26, bottom: 26),
-                width: 50,
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
-                      colors: [Color(0xFF05A69B), Color(0xFF03807C)]),
-                  shape: BoxShape.circle,
-                ),
-                child: FlatButton(
-                  child: Center(child: Icon(Icons.arrow_right_alt)),
-                  onPressed: () => {},
-                  textColor: Colors.white,
-                ),
               ),
             ),
           ],

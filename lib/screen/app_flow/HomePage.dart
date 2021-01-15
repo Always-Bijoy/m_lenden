@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:line_icons/line_icons.dart';
+
+import 'SendMoney/SendMoney.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -8,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final items = List<String>.generate(10000, (i) => "Item $i");
+  final items = List<String>.generate(10, (i) => "Item $i");
 
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
@@ -130,21 +133,108 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 80),
+                        margin: EdgeInsets.only(top: 45),
                         child: Image.asset(
                           'assets/banner.png',
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 8,top: 8),
-                        child: Text("Transactions", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                        padding: const EdgeInsets.only(left: 16, top: 10,bottom: 8),
+                        child: Text(
+                          "Transactions",
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
                       ),
+                      //ListView>>...............................
                       Expanded(
                         child: ListView.builder(
                           itemCount: items.length,
                           itemBuilder: (context, index) {
-                            return ListTile(
-                              title: Text('${items[index]}'),
+                            return Card(
+                              child: Row(
+                                children: [
+                                  Expanded(
+                                      child: Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: Container(
+                                          height: 50,
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            children: [
+                                              Stack(children: [
+                                                Image.asset(
+                                                  "assets/pro1.png",
+                                                  width: 50,
+                                                  height: 50,
+                                                ),
+                                                Positioned(
+                                                  right: 0,bottom: 0,
+                                                  child: Image.asset(
+                                                    "assets/icTickSquare.png",
+                                                    width: 15,
+                                                    height: 15,
+                                                  ),
+                                                ),
+                                              ]),
+                                              Padding(
+                                                padding: const EdgeInsets.only(left: 8.0),
+                                                child: Column(
+                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                  mainAxisAlignment: MainAxisAlignment.center,
+                                                  children: [
+                                                    Text(
+                                                      "01723355522",
+                                                      style: TextStyle(color: Colors.black),
+                                                    ),
+                                                    SizedBox(height: 5,),
+                                                    Text(
+                                                      "sent",
+                                                      style: TextStyle(color: Colors.green),
+                                                    )
+                                                  ],
+                                                ),
+                                              ),
+                                              Spacer(),
+                                              Column(
+                                                crossAxisAlignment: CrossAxisAlignment.start,
+                                                mainAxisAlignment: MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                    "10,000 BDT",
+                                                    style: TextStyle(color: Colors.black),
+                                                  ),
+                                                  SizedBox(height: 10,),
+                                                  Row(
+                                                    mainAxisAlignment: MainAxisAlignment.end,
+                                                    children: [
+                                                      Image.asset(
+                                                        "assets/nogod.png",
+                                                        width: 15,
+                                                        height: 15,
+                                                      ),
+                                                      SizedBox(width: 5,),
+                                                      Image.asset(
+                                                        "assets/arrowRight.png",
+                                                        width: 15,
+                                                        height: 15,
+                                                      ),
+                                                      SizedBox(width: 5,),
+                                                      Image.asset(
+                                                        "assets/rocket.png",
+                                                        width: 15,
+                                                        height: 15,
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),),
+                                ],
+                              ),
                             );
                           },
                         ),
@@ -170,18 +260,28 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         Column(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Color.fromRGBO(4, 161, 151, 0.25),
-                              ),
-                              height: 75,
-                              width: 75,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Image.asset(
-                                  'assets/money.png',
-                                  height: 20,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => SendMoney(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: Color.fromRGBO(4, 161, 151, 0.25),
+                                ),
+                                height: 75,
+                                width: 75,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Image.asset(
+                                    'assets/money.png',
+                                    height: 20,
+                                  ),
                                 ),
                               ),
                             ),
@@ -269,19 +369,19 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                 tabs: [
                   GButton(
-                    icon: Icons.home,
+                    icon: LineIcons.home,
                     text: 'Home',
                   ),
                   GButton(
-                    icon: Icons.assignment_rounded,
-                    text: 'Likes',
+                    icon: LineIcons.history,
+                    text: 'History',
                   ),
                   GButton(
-                    icon: Icons.inbox,
-                    text: 'Search',
+                    icon: Icons.message,
+                    text: 'Inbox',
                   ),
                   GButton(
-                    icon: Icons.assignment_ind_rounded,
+                    icon: Icons.account_circle,
                     text: 'Profile',
                   ),
                 ],
