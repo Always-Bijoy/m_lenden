@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:m_lenden/screen/app_flow/HomePage.dart';
+import 'file:///G:/flutterProject/work/m_lenden/lib/screen/Bottom%20Nav/HomePage.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   @override

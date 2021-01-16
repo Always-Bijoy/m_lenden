@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:m_lenden/screen/Bottom%20Nav/Transaction%20History.dart';
 import 'package:m_lenden/screen/app_flow/FaQ/FaQ.dart';
 
-import 'SendMoney/SendMoney.dart';
+import '../app_flow/SendMoney/SendMoney.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,26 +16,12 @@ class _HomePageState extends State<HomePage> {
   final items = List<String>.generate(10, (i) => "Item $i");
 
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 1: Likes',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 2: Search',
-      style: optionStyle,
-    ),
-    Text(
-      'Index 3: Profile',
-      style: optionStyle,
-    ),
-  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +127,8 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 16, top: 10,bottom: 8),
+                        padding:
+                            const EdgeInsets.only(left: 16, top: 10, bottom: 8),
                         child: Text(
                           "Transactions",
                           style: TextStyle(
@@ -156,84 +144,104 @@ class _HomePageState extends State<HomePage> {
                               child: Row(
                                 children: [
                                   Expanded(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: 50,
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
-                                            children: [
-                                              Stack(children: [
-                                                Image.asset(
-                                                  "assets/pro1.png",
-                                                  width: 50,
-                                                  height: 50,
-                                                ),
-                                                Positioned(
-                                                  right: 0,bottom: 0,
-                                                  child: Image.asset(
-                                                    "assets/icTickSquare.png",
-                                                    width: 15,
-                                                    height: 15,
-                                                  ),
-                                                ),
-                                              ]),
-                                              Padding(
-                                                padding: const EdgeInsets.only(left: 8.0),
-                                                child: Column(
-                                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                                  mainAxisAlignment: MainAxisAlignment.center,
-                                                  children: [
-                                                    Text(
-                                                      "01723355522",
-                                                      style: TextStyle(color: Colors.black),
-                                                    ),
-                                                    SizedBox(height: 5,),
-                                                    Text(
-                                                      "sent",
-                                                      style: TextStyle(color: Colors.green),
-                                                    )
-                                                  ],
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Container(
+                                        height: 50,
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Stack(children: [
+                                              Image.asset(
+                                                "assets/pro1.png",
+                                                width: 50,
+                                                height: 50,
+                                              ),
+                                              Positioned(
+                                                right: 0,
+                                                bottom: 0,
+                                                child: Image.asset(
+                                                  "assets/icTickSquare.png",
+                                                  width: 15,
+                                                  height: 15,
                                                 ),
                                               ),
-                                              Spacer(),
-                                              Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                mainAxisAlignment: MainAxisAlignment.center,
+                                            ]),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 8.0),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
                                                 children: [
                                                   Text(
-                                                    "10,000 BDT",
-                                                    style: TextStyle(color: Colors.black),
+                                                    "01723355522",
+                                                    style: TextStyle(
+                                                        color: Colors.black),
                                                   ),
-                                                  SizedBox(height: 10,),
-                                                  Row(
-                                                    mainAxisAlignment: MainAxisAlignment.end,
-                                                    children: [
-                                                      Image.asset(
-                                                        "assets/nogod.png",
-                                                        width: 15,
-                                                        height: 15,
-                                                      ),
-                                                      SizedBox(width: 5,),
-                                                      Image.asset(
-                                                        "assets/arrowRight.png",
-                                                        width: 15,
-                                                        height: 15,
-                                                      ),
-                                                      SizedBox(width: 5,),
-                                                      Image.asset(
-                                                        "assets/rocket.png",
-                                                        width: 15,
-                                                        height: 15,
-                                                      ),
-                                                    ],
+                                                  SizedBox(
+                                                    height: 5,
                                                   ),
+                                                  Text(
+                                                    "sent",
+                                                    style: TextStyle(
+                                                        color: Colors.green),
+                                                  )
                                                 ],
                                               ),
-                                            ],
-                                          ),
+                                            ),
+                                            Spacer(),
+                                            Column(
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                Text(
+                                                  "10,000 BDT",
+                                                  style: TextStyle(
+                                                      color: Colors.black),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.end,
+                                                  children: [
+                                                    Image.asset(
+                                                      "assets/nogod.png",
+                                                      width: 15,
+                                                      height: 15,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Image.asset(
+                                                      "assets/arrowRight.png",
+                                                      width: 15,
+                                                      height: 15,
+                                                    ),
+                                                    SizedBox(
+                                                      width: 5,
+                                                    ),
+                                                    Image.asset(
+                                                      "assets/rocket.png",
+                                                      width: 15,
+                                                      height: 15,
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                      ),),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             );
@@ -315,7 +323,7 @@ class _HomePageState extends State<HomePage> {
                           ],
                         ),
                         GestureDetector(
-                          onTap: (){
+                          onTap: () {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -355,7 +363,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
+      /*bottomNavigationBar: Container(
         decoration: BoxDecoration(color: Colors.white, boxShadow: [
           BoxShadow(blurRadius: 20, color: Colors.black.withOpacity(.1))
         ]),
@@ -386,6 +394,16 @@ class _HomePageState extends State<HomePage> {
                   GButton(
                     icon: LineIcons.history,
                     text: 'History',
+                    onPressed: () {
+                      setState(() {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TransactionHistory(),
+                          ),
+                        );
+                      });
+                    },
                   ),
                   GButton(
                     icon: Icons.message,
@@ -398,13 +416,18 @@ class _HomePageState extends State<HomePage> {
                 ],
                 selectedIndex: _selectedIndex,
                 onTabChange: (index) {
-                  setState(() {
-                    _selectedIndex = index;
-                  });
+                  switch (index) {
+                    case 0:
+                      Navigator.pushNamed(context, "/mainPage");
+                      break;
+                    case 1:
+                      Navigator.pushNamed(context, "/otpPage");
+                      break;
+                  }
                 }),
           ),
         ),
-      ),
+      ),*/
     );
   }
 }

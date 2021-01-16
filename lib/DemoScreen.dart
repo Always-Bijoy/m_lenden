@@ -1,78 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:m_lenden/pages.dart';
+import 'package:m_lenden/screen/Bottom%20Nav/Transaction%20History.dart';
 
-class DummyScreen extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _seletedItem = 0;
+  var _pages = [TransactionHistory(), SecondPage(), ThirdPage()];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
-          height: 50,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(children: [
-                Image.asset(
-                  "assets/intro1.png",
-                  width: 50,
-                  height: 50,
-                ),
-                Positioned(
-                  right: 0,bottom: 0,
-                  child: Image.asset(
-                    "assets/intro1.png",
-                    width: 15,
-                    height: 15,
-                  ),
-                ),
-              ]),
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "01723355522",
-                      style: TextStyle(color: Colors.black),
-                    ),
-                    Text(
-                      "sent",
-                      style: TextStyle(color: Colors.green),
-                    )
-                  ],
-                ),
-              ),
-              Spacer(),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "10,000 BDT",
-                    style: TextStyle(color: Colors.black),
-                  ),
-                  Row(
-                    children: [
-                      Image.asset(
-                        "assets/intro1.png",
-                        width: 15,
-                        height: 15,
-                      ),
-                      Image.asset(
-                        "assets/intro1.png",
-                        width: 15,
-                        height: 15,
-                      ),
-                      Image.asset(
-                        "assets/intro1.png",
-                        width: 15,
-                        height: 15,
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
+      appBar: AppBar(title: Text('Bottom Navigation Bar - Demo'),),
+      body: Center(child: _pages[_seletedItem],),
+      bottomNavigationBar: BottomNavigationBar(
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), title: Text('Home')),
+          BottomNavigationBarItem(icon: Icon(Icons.photo), title: Text('Photos')),
+          BottomNavigationBarItem(icon: Icon(Icons.account_circle), title: Text('Profile'))
+        ],
+        currentIndex: _seletedItem,
+        onTap: (index){
+          setState(() {
+            _seletedItem = index;
+          });
+        },
       ),
     );
   }
