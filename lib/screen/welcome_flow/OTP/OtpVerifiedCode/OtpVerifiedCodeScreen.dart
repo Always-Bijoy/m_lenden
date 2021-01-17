@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:m_lenden/screen/Bottom%20Nav/HomePage.dart';
+import 'file:///G:/flutterProject/work/m_lenden/lib/screen/Bottom%20Nav/HomePage.dart';
+import 'package:m_lenden/screen/Bottom%20Nav/MyBottomNav.dart';
 
 class OtpVerifiedCode extends StatefulWidget {
   @override
@@ -33,7 +34,7 @@ class _OtpVerifiedCodeState extends State<OtpVerifiedCode> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => HomePage(),
+              builder: (context) => MyBottomNav(),
             ),
           );
         },

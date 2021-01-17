@@ -1,5 +1,6 @@
 import 'package:fancy_on_boarding/fancy_on_boarding.dart';
 import 'package:flutter/material.dart';
+import 'package:m_lenden/screen/Bottom%20Nav/MyBottomNav.dart';
 import 'package:m_lenden/utils/constructors.dart';
 
 class AppIntro extends StatefulWidget {
@@ -76,7 +77,7 @@ class _AppIntroState extends State<AppIntro> {
         onDoneButtonPressed: () =>
             Navigator.of(context).pushReplacementNamed('/otpPage'),
         onSkipButtonPressed: () =>
-            Navigator.of(context).pushReplacementNamed('/mainPage'),
+            Navigator.of(context).pushReplacementNamed('/bottomeNav'),
       ),
     );
   }

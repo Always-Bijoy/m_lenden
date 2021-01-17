@@ -16,14 +16,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       routes: {
         '/mainPage': (context) => HomePage(),
-        '/otpPage': (context) => OtpVerificationScreen()
+        '/otpPage': (context) => OtpVerificationScreen(),
+        '/bottomeNav': (context) => MyBottomNav()
       },
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.teal, fontFamily: 'Nunito'),
-      home: MyBottomNav()
+      home:
+      // MyBottomNav()
       // DummyScreen()
-      // SplashScreen()
+      SplashScreen()
       // AppIntro(),
       // MyHomePage(title: 'Fancy OnBoarding HomePage'),
     );
