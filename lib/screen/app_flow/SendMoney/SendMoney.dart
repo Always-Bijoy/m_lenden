@@ -8,7 +8,7 @@ class SendMoney extends StatefulWidget {
 }
 
 class _SendMoneyState extends State<SendMoney> {
-  String dropdownValue = 'One';
+  String dropdownValue = 'bKash';
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _SendMoneyState extends State<SendMoney> {
                             dropdownValue = newValue;
                           });
                         },
-                        items: <String>['One', 'Two', 'Three', 'Four']
+                        items: <String>['bKash', 'Rocket', 'Nagad', 'Four']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -110,7 +110,7 @@ class _SendMoneyState extends State<SendMoney> {
                             dropdownValue = newValue;
                           });
                         },
-                        items: <String>['One', 'Two', 'Three', 'Four']
+                        items: <String>['bKash', 'Rocket', 'Nagad', 'Four']
                             .map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,

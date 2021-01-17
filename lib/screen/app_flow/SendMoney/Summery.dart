@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:m_lenden/screen/app_flow/FaQ/FaQ.dart';
 import 'package:m_lenden/screen/app_flow/SendMoney/SummeryRespose.dart';
+import 'package:m_lenden/screen/app_flow/terms/TermsNCondition.dart';
 
 class Summery extends StatefulWidget {
   @override
@@ -117,11 +119,27 @@ class _SummeryState extends State<Summery> {
                   ),
                 ),
               ),
-              Text(
-                'Terms and Condition',style: TextStyle(color: Color(0xFF03807C)),
+
+              /*Text(
+                'Terms and Condition',
+                style: TextStyle(color: Color(0xFF03807C)),
               ),
               SizedBox(
                 height: 30,
+              ),*/
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TermsNCondition(),
+                    ),
+                  );
+                },
+                child: new  Text(
+                  'Terms and Condition',
+                  style: TextStyle(color: Color(0xFF03807C)),
+                ),
               ),
               Center(
                 child: Container(
@@ -149,8 +167,8 @@ class _SummeryState extends State<Summery> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SummeryResponse(),
-                              ),
+                            builder: (context) => SummeryResponse(),
+                          ),
                         );
                       })
                     },

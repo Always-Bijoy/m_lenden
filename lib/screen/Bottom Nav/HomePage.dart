@@ -4,6 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:m_lenden/screen/Bottom%20Nav/Transaction%20History.dart';
 import 'package:m_lenden/screen/app_flow/FaQ/FaQ.dart';
+import 'package:m_lenden/screen/welcome_flow/OnBoarding/StepOne/AppIntro.dart';
 
 import '../app_flow/SendMoney/SendMoney.dart';
 
@@ -302,24 +303,35 @@ class _HomePageState extends State<HomePage> {
                         ),
                         Column(
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(12),
-                                color: Color.fromRGBO(4, 161, 151, 0.25),
-                              ),
-                              height: 75,
-                              width: 75,
-                              child: Padding(
-                                padding: const EdgeInsets.all(18.0),
-                                child: Image.asset(
-                                  'assets/Send.png',
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => AppIntro(),
+                                  ),
+                                );
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12),
+                                  color: Color.fromRGBO(4, 161, 151, 0.25),
+                                ),
+                                height: 75,
+                                width: 75,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(18.0),
+                                  child: Image.asset(
+                                    'assets/Send.png',
+                                    height: 20,
+                                  ),
                                 ),
                               ),
                             ),
                             SizedBox(
                               height: 15,
                             ),
-                            Text("Flexiload"),
+                            Text("Flexi Load"),
                           ],
                         ),
                         GestureDetector(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'file:///G:/flutterProject/work/m_lenden/lib/screen/Bottom%20Nav/HomePage.dart';
+import 'package:m_lenden/screen/Bottom%20Nav/HomePage.dart';
 import 'package:m_lenden/screen/welcome_flow/OTP/OtpVerifiedCode/OtpVerifiedCodeScreen.dart';
 
 class OtpVerificationScreen extends StatefulWidget {

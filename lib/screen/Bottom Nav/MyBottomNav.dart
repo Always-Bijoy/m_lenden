@@ -3,7 +3,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:m_lenden/pages.dart';
 import 'package:m_lenden/screen/Bottom%20Nav/Transaction%20History.dart';
-import 'file:///G:/flutterProject/work/m_lenden/lib/screen/Bottom%20Nav/HomePage.dart';
+import 'package:m_lenden/screen/Bottom%20Nav/HomePage.dart';
 
 class MyBottomNav extends StatefulWidget {
   MyBottomNav({Key key}) : super(key: key);
